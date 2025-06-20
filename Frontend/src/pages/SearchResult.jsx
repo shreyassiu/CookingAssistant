@@ -111,20 +111,6 @@ const SearchResult = () => {
                             </div>
                         )}
                     </div>
-
-                    {/* Toggle Switch */}
-                    <div className="flex items-center space-x-3 mt-1 sm:mt-0">
-                        <span className="text-lg">Veg Only</span>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                className="sr-only peer"
-                                checked={vegOnly}
-                                onChange={() => setVegOnly(!vegOnly)}
-                            />
-                            <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
-                        </label>
-                    </div>
                 </div>
             </div>
 
