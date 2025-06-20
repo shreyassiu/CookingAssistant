@@ -85,10 +85,8 @@ const SearchResult = () => {
         <div className="min-h-screen bg-white">
             <Navbar titleColour="text-green-600" />
 
-            {/* Search Bar + Toggle */}
             <div className="w-full flex flex-col items-center pt-6 px-4 sm:px-6">
-                <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-                    <div ref={autoCompleteRef} className="relative w-full sm:w-auto flex justify-center">
+                    <div ref={autoCompleteRef} className="relative w-full flex justify-center">
                         <input
                             type="text"
                             value={searchText}
@@ -111,7 +109,6 @@ const SearchResult = () => {
                             </div>
                         )}
                     </div>
-                </div>
             </div>
 
             {/* Results */}
