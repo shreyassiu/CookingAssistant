@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
-import Navbar from '../components/custom/navbar'
-import Slide1 from '../components/custom/Home/slide1'
+import Navbar from '../components/custom/Navbar'
+import Slide1 from '../components/custom/home/Slide1'
 import PopularRecipes from '../components/custom/Home/PopularRecipes'
 const Home = () => {
     

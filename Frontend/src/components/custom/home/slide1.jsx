@@ -1,5 +1,5 @@
-import React, { useEffect,useRef,useState } from 'react'
-import {useNavigate} from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const slide1 = () => {
     const [searchText, setSearchText] = useState('');
@@ -26,7 +26,6 @@ const slide1 = () => {
         fetchAutoComplete();
     }, [searchText])
     useEffect(() => {
-        console.log('AutoComplete Data:', autoComplete);
         const handleClickOutside = (event) => {
             if (autoCompleteRef.current && !autoCompleteRef.current.contains(event.target)) {
                 setAutoComplete([]);
@@ -48,7 +47,7 @@ const slide1 = () => {
 
     return (
         <div>
-            <div className='flex flex-col h-[65vh] w-[100vw] md:flex-row items-center px-4 gap-5 relative z-10'>
+            <div className='flex flex-col h-[65vh] w-[100vw] md:flex-row justify-center items-center px-4 gap-5 relative z-10'>
 
                 <div className='hidden xl:block absolute -left-8 top-1/2 transform -translate-y-1/2'>
                     <img className='h-90 w-90 m-0 object-contain' src="/chef.png" alt="" />
@@ -58,19 +57,23 @@ const slide1 = () => {
                     <h1 className='text-3xl xl:text-5xl text-white font-bold w-[90%] md:w-[55%]'>
                         Make delicious dishes with the help of a Voice Assistant!
                     </h1>
-                    <div ref={autoCompleteRef} className='flex flex-col items-center justify-center w-full relative '>
+                    <div ref={autoCompleteRef} className="relative w-full flex flex-col items-center">
                         <input
                             type="text"
-                            placeholder='Search for recipes'
-                            name='search'
+                            placeholder="Search for recipes"
+                            name="search"
                             onChange={(e) => setSearchText(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            className='bg-white p-2 px-4 w-[90%] xl:w-[50%] h-14 rounded-2xl placeholder:text-lg focus:outline-none focus:ring-4 focus:ring-white/50'
+                            className="bg-white p-3 px-5 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] h-14 rounded-full placeholder:text-lg shadow-md focus:outline-none focus:ring-4 focus:ring-green-300 transition-all duration-200"
                         />
                         {autoComplete.length > 0 && (
-                            <div className='absolute top-15 z-50 flex flex-col w-full items-center'>
+                            <div className="absolute top-full mt-2 z-50 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] bg-white rounded-xl shadow-lg overflow-y-auto max-h-64 border border-gray-200">
                                 {autoComplete.map((item, index) => (
-                                    <div key={item.id} onClick={handleSearch}  className=' flex items-baseline p-2 px-4 bg-white hover:bg-gray-100 cursor-pointer w-[90%] xl:w-[50%] max-h-60 overflow-y-auto shadow-lg'>
+                                    <div
+                                        key={item.id}
+                                        onClick={() => handleSearch(item)}
+                                        className="p-3 px-5 cursor-pointer hover:bg-gray-100 transition-colors"
+                                    >
                                         {item.title}
                                     </div>
                                 ))}
@@ -78,7 +81,6 @@ const slide1 = () => {
                         )}
                     </div>
                 </div>
-
                 <div className='hidden xl:block absolute -right-10 transform translate-y-1/14'>
                     <img className='h-[607.5px] w-[337.5px] m-0 p-0 object-contain' src="/Sushi_replace.avif" alt="" />
                 </div>

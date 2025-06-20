@@ -4,7 +4,6 @@ const apiKey = ServerConfig.SPOONACULAR_API_KEY;
 
 const popularFoodItems = async (req, res) => {
     try {
-        // console.log("request received");
         const baseUrl = 'https://api.spoonacular.com/recipes/random';
         const queryParams = new URLSearchParams({
             apiKey,
@@ -42,26 +41,26 @@ const autocompleteFoodItems = async (req, res) => {
     }
 }
 
-const searchFoodItems = async (req,res)=>{
-    try {
-        console.log("request received");
-        const baseUrl = 'https://api.spoonacular.com/recipes/complexSearch';
-        const queryParams = new URLSearchParams({
-            apiKey,
-            query: req.query.query || '',
-            diet : req.query.diet || '',
-        })
-        const searchFoodItems = await fetch(`${baseUrl}?${queryParams}`);
-        const result = await searchFoodItems.json();
-        console.log(result);
-        res.status(200).json(result);
-    } catch (error) {
-        res.status(500).json({
-            error: 'Failed to fetch search query',
-            details: error.message
-        });
-    }
-}
+// const searchFoodItems = async (req,res)=>{
+//     try {
+//         console.log("request received");
+//         const baseUrl = 'https://api.spoonacular.com/recipes/complexSearch';
+//         const queryParams = new URLSearchParams({
+//             apiKey,
+//             query: req.query.query || '',
+//             diet : req.query.diet || '',
+//         })
+//         const searchFoodItems = await fetch(`${baseUrl}?${queryParams}`);
+//         const result = await searchFoodItems.json();
+//         console.log(result);
+//         res.status(200).json(result);
+//     } catch (error) {
+//         res.status(500).json({
+//             error: 'Failed to fetch search query',
+//             details: error.message
+//         });
+//     }
+// }
 
 const recipe = async(req,res) =>{
     try {
@@ -105,7 +104,6 @@ const similarFoodItems = async (req, res) => {
 module.exports = {
     popularFoodItems,
     autocompleteFoodItems,
-    searchFoodItems,
     recipe,
     similarFoodItems
 };
