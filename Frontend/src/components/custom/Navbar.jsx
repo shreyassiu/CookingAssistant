@@ -18,7 +18,7 @@ const Navbar = ({ titleColour = "text-white" }) => {
 
     return (
         <div className={`${background} ${titleColour} font-bold`}>
-            <div className="flex items-center p-4 justify-between lg:justify-around">
+            <div className="flex items-center p-10 justify-around">
                 <h1
                     className={`text-4xl text-center font-bold cursor-pointer hover:scale-105 transition`}
                     onClick={handleTitleClick}
@@ -74,6 +74,13 @@ const Navbar = ({ titleColour = "text-white" }) => {
                         <li>
                             <button className='cursor-pointer hover:scale-105 ' onClick={() => { setMenuOpen(false); logout(); }}>
                                 Log out
+                            </button>
+                        </li>
+                    )}
+                    {!isAuthenticated && (
+                        <li>
+                            <button className='cursor-pointer hover:scale-105 ' onClick={() => { setMenuOpen(false); openLogin(); }}>
+                                Log in
                             </button>
                         </li>
                     )}

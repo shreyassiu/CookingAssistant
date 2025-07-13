@@ -15,7 +15,7 @@ const ModalShell = ({ isOpen, onClose, children }) => {
                     />
 
                     <motion.div
-                        className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 bg-transparent w-[80%] sm:w-[400px] rounded-2xl p-8"
+                        className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-50 bg-transparent w-[300px] sm:w-[400px] rounded-2xl p-0"
                         initial={{ y: "-100%", opacity: 0 }}
                         animate={{ y: "5%", opacity: 1 }}
                         exit={{ y: "-100%", opacity: 0 }}

@@ -63,14 +63,14 @@ const Login = () => {
 
     return (
 
-        <div className="w-[250px] sm:w-[400px] bg-white border relative border-green-300 shadow-lg rounded-2xl p-8 flex flex-col items-center justify-center">
+        <div className="w-[300px] sm:w-[400px] bg-white border relative border-green-300 shadow-lg rounded-2xl p-8 flex flex-col sm:items-center sm:justify-center">
             <button
                 onClick={closeModals}
                 className="absolute top-2 right-4 text-green-600 text-2xl font-bold focus:outline-none cursor-pointer"
             >
                 &times;
             </button>
-            <h1 className="text-2xl font-semibold text-green-600 mb-6">Login to add your own recipes!</h1>
+            <h1 className="text-xl sm:text-2xl font-semibold text-green-600 mb-6">Login to add your own recipes!</h1>
 
             <form className="w-full" onSubmit={handleSubmit}>
 
